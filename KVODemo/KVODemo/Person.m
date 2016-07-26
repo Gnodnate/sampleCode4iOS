@@ -21,6 +21,10 @@
               forKeyPath:INTERESTRATE
                  options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld)
                  context:nil]; // work
+    [account addObserver:self
+              forKeyPath:FULLNAME
+                 options:(NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld)
+                 context:nil];
 }
 
 - (void)removeObserverForAccount:(Account*)account {
@@ -38,6 +42,8 @@
     } else if ([keyPath isEqualToString:INTERESTRATE]) {
         NSLog(@"%@ changed %@",keyPath, [change objectForKey:NSKeyValueChangeNewKey]);
         
+    } else if ([keyPath isEqualToString:FULLNAME]) {
+        NSLog(@"%@ changed %@",keyPath, [change objectForKey:NSKeyValueChangeNewKey]);
     } else {
         NSLog(@"Get keyPaht = %@", keyPath);
         [super observeValueForKeyPath:keyPath

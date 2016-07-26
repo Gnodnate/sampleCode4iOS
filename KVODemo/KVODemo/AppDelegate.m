@@ -29,7 +29,12 @@
     [self.account setValue:@30 forKey:INTERESTRATE];
 
     [self setValue:@40 forKeyPath:@"account.interestRate"];
-        
+
+    [self.account setBalance:@33];
+    
+    self.account.lastName = @"Tan";
+    self.account.firstName = @"Dan";
+    
     [self.account setBalances:[NSNumber numberWithInt:10]];
     
 }
