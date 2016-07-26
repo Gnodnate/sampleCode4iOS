@@ -39,7 +39,7 @@
         NSLog(@"%@ changed %@",keyPath, [change objectForKey:NSKeyValueChangeNewKey]);
         
     } else {
-        // Any unrecognized context must belong to super
+        NSLog(@"Get keyPaht = %@", keyPath);
         [super observeValueForKeyPath:keyPath
                              ofObject:object
                                change:change

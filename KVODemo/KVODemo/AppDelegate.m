@@ -26,6 +26,10 @@
     
     [self.persion registerAsObserverForAccount:self.account];
     [self.account setInterestRate:@20];
+    [self.account setValue:@30 forKey:INTERESTRATE];
+
+    [self setValue:@40 forKeyPath:@"account.interestRate"];
+        
     [self.account setBalances:[NSNumber numberWithInt:10]];
     
 }
