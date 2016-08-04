@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15G31" minimumToolsVersion="Automatic">
+    <entity name="DepartMent" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="employees" maxCount="1" deletionRule="Cascade" destinationEntity="Employee" inverseName="departMent" inverseEntity="Employee" syncable="YES"/>
+    </entity>
+    <entity name="Employee" representedClassName=".Employee" parentEntity="Person" syncable="YES">
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="departMent" maxCount="1" deletionRule="Cascade" destinationEntity="DepartMent" inverseName="employees" inverseEntity="DepartMent" syncable="YES"/>
+    </entity>
+    <entity name="Person" representedClassName=".Person" isAbstract="YES" syncable="YES">
+        <attribute name="dateOfBirth" attributeType="Date" defaultDateTimeInterval="-439189860" syncable="YES"/>
+        <attribute name="gender" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="DepartMent" positionX="-144" positionY="-81" width="128" height="73"/>
+        <element name="Employee" positionX="-18" positionY="153" width="128" height="73"/>
+        <element name="Person" positionX="-380" positionY="113" width="128" height="73"/>
+    </elements>
+</model>
